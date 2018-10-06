@@ -3,4 +3,32 @@ layout: page
 title: 'Acerca de mi'
 ---
 
-<h1>Acerca de mi</h1>
+<div class="columns">
+    <div class="column">
+        <table class="table is-fullwidth">
+            <tbody>
+                {% for item in site.data.cv.basicData %}
+                    <tr>
+                        <td class="has-text-right has-text-weight-bold has-background-dark has-text-white">{{item[0]}}</td>
+                        <td class="has-text-centered">{{item[1]}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="column">
+        <h1 class="title is-size-1">Acerca de mi</h1>
+    </div>
+</div>
+<div class="columns">
+    <div class="column">
+        <h2 class="title is-size-2">Proyectos hechos</h2>
+        {% for project in site.projects %}
+            <div class="media">
+                <div class="media-content">
+                    <h3>{{project.title}}</h3>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
