@@ -17,16 +17,19 @@ title: 'Acerca de mi'
         </table>
     </div>
     <div class="column">
-        <h1 class="title is-size-1">Acerca de mi</h1>
+        <h1 class="title is-1">Acerca de mi</h1>
     </div>
 </div>
 <div class="columns">
     <div class="column">
-        <h2 class="title is-size-2">Proyectos hechos</h2>
+        <h2 class="title is-2">Proyectos hechos</h2>
         {% for project in site.projects %}
             <div class="media">
                 <div class="media-content">
-                    <h3>{{project.title}}</h3>
+                    <h3 class="title is-3">{{project.title}}</h3>
+                    <div>
+                        {{project.content}}
+                    </div>
                 </div>
             </div>
         {% endfor %}
