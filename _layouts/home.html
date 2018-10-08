@@ -8,16 +8,21 @@
     <title>{{page.title}}</title>
 </head>
 <body>
-    <nav class="navbar is-primary">
+    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="/">
-                <h1 class="title is-1">
+                <h1 class="title is-4">
                     {{site.title}}
                 </h1>
             </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
         </div>
-        <div class="navbar-menu">
-            <div class="navbar-end">
+        <div id="menu" class="navbar-menu">
+            <div class="navbar-start">
                 {% for item in site.data.navigation %}
                     <a href="{{ item.link }}" class="navbar-item {% if page.url == item.link %} has-text-dark {% endif %}">
                         {{ item.name }}
@@ -29,5 +34,13 @@
     <div class="container">
         {{content}}
     </div>
+    <script>
+        const btnMenu = document.querySelector('.navbar-burger.burger')        
+        const menu = document.getElementById('menu')
+        btnMenu.onclick = function toggleMenu() {
+            menu.classList.toggle('is-active')
+            btnMenu.classList.toggle('is-active')
+        }
+    </script>
 </body>
 </html>
