@@ -1,6 +1,6 @@
 ---
-layout: page
-title: 'Acerca de mi'
+layout: cv
+title: Curriculum Raul Contreras
 ---
 
 <div class="columns">
@@ -17,19 +17,69 @@ title: 'Acerca de mi'
         </table>
     </div>
     <div class="column">
-        <h1 class="title is-1">Acerca de mi</h1>
+        <h2 class="title is-2">Acerca de mi</h2>
     </div>
 </div>
 <div class="columns">
     <div class="column">
-        <h2 class="title is-2">Proyectos hechos</h2>
-        {% for project in site.projects %}
+        <h2 class="title is-2">Titulos obtenidos</h2>
+        {% for title in site.data.titles %}
             <div class="media">
+                <div class="media-left">
+                    <h3 class="title is-3">{{title.year}}</h3>
+                </div>
                 <div class="media-content">
-                    <h3 class="title is-3">{{project.title}}</h3>
-                    <div>
-                        {{project.content}}
-                    </div>
+                    <p><strong>{{title.name}}</strong></p>
+                    <p>{{title.place}}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="column">
+        <div class="columns">
+            <div class="column">
+                <h2 class="title is-2">Idiomas aprendidos</h2>
+                <div>
+                    {% for lang in site.data.languages %}
+                        <span class="tag is-dark">{{lang.name}} ({{lang.level}})</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column">
+                <h2 class="title is-2">Tecnologías aprendidas</h2>
+                <div>
+                    {% for tech in site.data.techs %}
+                        <a href="{{tech.url}}" target="_blank">
+                            <span class="tag is-light">
+                                {% if tech.ico %}
+                                    <img src="{{tech.ico}}" style="height: 12px" alt="">
+                                {% endif %}
+                                {{tech.name}}
+                            </span>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="columns">
+    <div class="column">
+        <h2 class="title is-2">Experiencia laboral</h2>
+        {% for work in site.data.works %}
+            <div class="media">
+                <div class="media-left">
+                    <h3 class="title is-3">{{work.year}}</h3>
+                </div>
+                <div class="media-content">
+                    <p>
+                        <strong>
+                            <a href="{{work.url}}" target="_blank">{{work.place}}</a>
+                        </strong>
+                    </p>
+                    <p>{{work.charge}}</p>
                 </div>
             </div>
         {% endfor %}

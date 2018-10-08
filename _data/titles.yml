@@ -1,0 +1,12 @@
+- name: 'ESO (Educacion Secundaria Obligatoria)'
+  place: 'Insituto la Cerámica IES Doctor Bamlmis'
+  year: '2004'
+- name: 'SMR (Sistemas MicroInformáticos y Redes)'
+  place: 'Insituto la Cerámica IES Doctor Bamlmis'
+  year: '2010'
+- name: 'Título de acceso a Grado Superior'
+  place: 'Alberto Barrios Alicante'
+  year: 2015
+- name: 'DAM (Desarrollo de Aplicaiones Multiplataforma'
+  place: 'Insituto la Cerámica IES Doctor Bamlmis'
+  year: '2016'
